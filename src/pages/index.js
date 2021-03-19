@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby';
+import ReactHtmlParser from 'react-html-parser';
 import { Container, Stack, Box, Heading, Text, Link } from '@chakra-ui/react';
 
 const HomePage = () => {
@@ -25,13 +26,7 @@ const HomePage = () => {
         {allWpPost.nodes.map(({ id, title, excerpt, uri }) => (
           <Box key={id} p={5} shadow="md" borderWidth="1px">
             <Heading as={`h2`}>{title}</Heading>
-            <Text mt={4}>
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: `<p>${excerpt}</p>`,
-                }}
-              />
-            </Text>
+            <Text mt={4}>{ReactHtmlParser(excerpt)}</Text>
             <Link as={GatsbyLink} to={uri}>
               Read more
             </Link>

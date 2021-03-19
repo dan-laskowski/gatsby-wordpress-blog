@@ -15,7 +15,7 @@ const WpPost = ({ data: { wpPost } }) => {
           {wpPost.title}
         </Heading>
         <Text mt={4} mb={10}>
-          <div>{ReactHtmlParser(wpPost.excerpt)}</div>
+          {ReactHtmlParser(wpPost.content)}
         </Text>
         <Link as={GatsbyLink} to="/">{`<< Back to Blog`}</Link>
       </Container>
