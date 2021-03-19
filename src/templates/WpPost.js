@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
 import { Container, Heading, Link, Text } from '@chakra-ui/react';
 import { Link as GatsbyLink, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
@@ -14,7 +15,7 @@ const WpPost = ({ data: { wpPost } }) => {
           {wpPost.title}
         </Heading>
         <Text mt={4} mb={10}>
-          <div dangerouslySetInnerHTML={{ __html: wpPost.content }} />
+          <div>{ReactHtmlParser(wpPost.excerpt)}</div>
         </Text>
         <Link as={GatsbyLink} to="/">{`<< Back to Blog`}</Link>
       </Container>
