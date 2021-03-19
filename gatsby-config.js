@@ -1,13 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Conf Demo",
+    title: 'Gatsby Conf Demo',
   },
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
     {
-      resolve: "@chakra-ui/gatsby-plugin",
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `https://daniello110.usermd.net/graphql`,
+      },
+    },
+    {
+      resolve: '@chakra-ui/gatsby-plugin',
       options: {
         /**
          * @property {boolean} [isResettingCSS=true]
