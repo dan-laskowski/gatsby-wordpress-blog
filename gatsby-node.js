@@ -14,7 +14,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (result.errors) {
     reporter.error('There was an error fetching posts', result.errors);
   }
-  const { allWpPost } = result?.data;
+  const { allWpPost } = result.data;
   let template = require.resolve(`./src/templates/WpPost.js`);
 
   allWpPost.nodes.map((post) => {
