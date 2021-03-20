@@ -13,6 +13,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `gatsbywordpressblog`,
+      },
+    },
+    {
       resolve: '@chakra-ui/gatsby-plugin',
       options: {
         /**
