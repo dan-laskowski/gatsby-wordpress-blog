@@ -19,7 +19,9 @@ const WpPost = ({ data: { wpPost } }) => {
           {ReactHtmlParser(wpPost.content)}
         </Text>
         <Link as={GatsbyLink} to="/">{`<< Back to Blog`}</Link>
+        <Container></Container>
         <Disqus
+          style={{ width: `100%` }}
           config={{
             url: `https://gatsbywordpressblog.gtsb.io${wpPost.uri}`,
             identifier: wpPost.id,
