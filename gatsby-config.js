@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Conf Demo',
+    siteURL: 'https://gatsbywordpressblog.gtsb.io/',
   },
   plugins: [
     `gatsby-plugin-sharp`,

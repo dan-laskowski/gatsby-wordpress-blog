@@ -21,7 +21,7 @@ const WpPost = ({ data: { wpPost } }) => {
         <Link as={GatsbyLink} to="/">{`<< Back to Blog`}</Link>
         <Disqus
           config={{
-            url: wpPost.uri,
+            url: `https://gatsbywordpressblog.gtsb.io${wpPost.uri}`,
             identifier: wpPost.id,
             title: wpPost.title,
           }}
