@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import LazyLoad from 'react-lazy-load';
 import { Disqus } from 'gatsby-plugin-disqus';
 import { Container, Heading, Link, Text } from '@chakra-ui/react';
 import { Link as GatsbyLink, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import Comments from '../components/comments';
 
 const WpPost = ({ data: { wpPost } }) => {
   return (
@@ -19,15 +21,9 @@ const WpPost = ({ data: { wpPost } }) => {
           {ReactHtmlParser(wpPost.content)}
         </Text>
         <Link as={GatsbyLink} to="/">{`<< Back to Blog`}</Link>
-        <Container></Container>
-        <Disqus
-          style={{ width: `100%` }}
-          config={{
-            url: `https://gatsbywordpressblog.gtsb.io${wpPost.uri}`,
-            identifier: wpPost.id,
-            title: wpPost.title,
-          }}
-        />
+        <LazyLoad offsetTop={400}>
+          <Comments />
+        </LazyLoad>
       </Container>
     </>
   );
