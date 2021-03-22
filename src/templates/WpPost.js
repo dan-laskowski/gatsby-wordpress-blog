@@ -2,7 +2,7 @@ import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import LazyLoad from 'react-lazy-load';
 import { Container, Heading, Link, Text } from '@chakra-ui/react';
-import { Link as GatsbyLink, graphql } from 'gatsby';
+import { navigate, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Comments from '../components/comments';
 
@@ -20,7 +20,10 @@ const WpPost = ({ data: { wpPost } }) => {
         <Text mt={4} mb={10}>
           {ReactHtmlParser(wpPost.content)}
         </Text>
-        <Link as={GatsbyLink} to="/">{`<< Back to Blog`}</Link>
+        <Link
+          as="button"
+          onClick={() => navigate(-1)}
+        >{`<< Back to Blog`}</Link>
       </Container>
       <LazyLoad offsetTop={400}>
         <Comments />

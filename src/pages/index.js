@@ -23,6 +23,11 @@ const HomePage = () => {
       <Helmet>
         <html lang="pl" />
         <title>Gatsby Wordpress Blog</title>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Przykładowy blog stworzony z pomocą Gatsby.js z backendem Wordpress."
+        />
       </Helmet>
       <Container maxW="xl" centerContent>
         <Heading as={`h1`} m={5}>
