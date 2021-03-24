@@ -5,6 +5,7 @@ import { Container, Heading, Link, Text } from '@chakra-ui/react';
 import { navigate, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Comments from '../components/comments';
+import CommentCounter from '../components/CommentCounter';
 
 const WpPost = ({ data: { wpPost } }) => {
   return (
@@ -25,6 +26,7 @@ const WpPost = ({ data: { wpPost } }) => {
           onClick={() => navigate(-1)}
         >{`<< Back to Blog`}</Link>
       </Container>
+      <CommentCounter uri={wpPost.uri} />
       <LazyLoad offsetTop={400}>
         <Comments />
       </LazyLoad>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import Socials from './socials';
 
 const Wrapper = styled.div`
@@ -17,7 +18,7 @@ const StyledWrapper = styled.div`
   div {
     display: flex;
     flex-direction: row;
-    height: 36px;
+    height: 46px;
     justify-content: space-between;
     align-items: center;
   }
@@ -31,9 +32,13 @@ const LinkSection = styled.section`
   }
 `;
 
-const Nav = styled.nav``;
+const StyledLogo = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
 
-const Logo = styled.div``;
+const Nav = styled.nav``;
 
 const Footer = styled.footer`
   background-color: #2e3049;
@@ -66,7 +71,14 @@ const Layout = ({ children, ...props }) => {
             <Socials />
           </div>
         </StyledWrapper>
-        <Logo />
+        <StyledLogo>
+          <StaticImage
+            src="../images/logo.png"
+            placeholder="blurred"
+            alt="logo"
+            width={420}
+          />
+        </StyledLogo>
         <Nav></Nav>
       </Header>
       <div>
