@@ -25,7 +25,7 @@ const CommentCounter = ({ uri }) => {
   return (
     <div
       class="gc-counter"
-      data-url={`https://gatsbywordpressblog.gtsb.io/${uri}`}
+      data-url={`https://gatsbywordpressblog.gtsb.io${uri}`}
     ></div>
   );
 };
